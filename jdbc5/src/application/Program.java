@@ -25,5 +25,9 @@ public class Program {
     } catch (SQLException e) {
         throw new DbIntegrityException(e.getMessage());
     }
+      finally {
+          DB.closeStatement(st);
+          DB.closeConnection();
+      }
     }
 }
